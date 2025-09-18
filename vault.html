@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vault</title>
+    <link rel="stylesheet" href="vault-design.css">
+    <link rel="icon" href="search-icon.jpg">
+</head>
+<body>
+    <audio src="lobby-sound.mp3" autoplay loop></audio>
+    <audio src="vault-sound.mp3" autoplay></audio>
+    <main>
+        <h1>Unlock it :P <span class="clue-2">12</span></h1><br><br>
+        <div class="container">
+            <!-- form -->
+            <div class="input-box">
+                <form action="">
+                    <label for="code-1">È̴̡̪̫̎̈́̇̒n̵̳̩͔̘̭̆̔́͜͠t̷̛̫͍̜̕r̴̼͕̰͉̪̰̅̔̓y̸̲̠͒ ̷̡͇̖̬̘̻̏͋̔1̵̖̯̹͉̮̥̇͒̎͘ :</label><br>
+                    <input type="text" name="code-1" id="code-1" placeholder="13 Digits"><br>
+
+                    <label for="code-2">
+                        <span style="color: red;">█ </span>
+                        <span style="color: green;">██ </span>
+                        <span style="color: rgb(131, 23, 131);">█ </span>
+                        <span style="color: rgb(0, 156, 195);">██ </span>
+                        <span style="color: white;">█ </span>
+                        <span style="color: yellow;">██ </span>
+                        <span style="color: rgb(255, 57, 166);">██ </span>
+                        <span style="color: rgb(0, 238, 255)">██ </span>:
+                    </label><br>
+                    <input type="text" name="" id="code-2" placeholder="Words that's hard to say">
+                </form><br>
+                <button><a href="index.html">Go Back</a></button>
+            </div>
+            <!-- image -->
+            <div class="img-btn">
+                <button id="opn-vault">
+                    <img src="vault-img.png" alt="">
+                </button>
+                <p>Click to Unlock</p>
+            </div>
+        </div>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <button id="openModal"><img src="scroll-img.png" alt=""></button>
+    </footer>
+    <!-- CLUE MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-inner">
+            <h1>È̴̡̪̫̎̈́̇̒n̵̳̩͔̘̭̆̔́͜͠t̷̛̫͍̜̕r̴̼͕̰͉̪̰̅̔̓y̸̲̠͒ ̷̡͇̖̬̘̻̏͋̔1̵̖̯̹͉̮̥̇͒̎͘ :</h1><br><br>
+            <p>"Numbers hide in every place, a secret code we all must chase.<br>
+                Seek them close, yet none can trace,<br>
+                they shape the stars and rule the space."</p><br><br><br><br><hr><br><br><br><br>
+            <h1>
+                <span style="color: rgb(255, 104, 104);">█ </span>
+                <span style="color: green;">██ </span>
+                <span style="color: rgb(131, 23, 131);">█ </span>
+                <span style="color: rgb(0, 156, 195);">██ </span>
+                <span style="color: white;">█ </span>
+                <span style="color: yellow;">██ </span>
+                <span style="color: rgb(255, 57, 166);">██ </span>
+                <span style="color: gray;">██ </span>:
+            </h1><br><br>
+            <p>HEH?</p><br><br><br><br>
+            <button class="modal-close" id="closeModal">Close</button>
+        </div>
+    </div>
+    <!-- OPEN VAULT MODAL -->
+    <div class="open-vault" id="openVault">
+        <div class="openVault-inner">
+            <h1>sure ka?</h1><br>
+            <button class="yes">Yes</button><br><br>
+            <p style="font-size: 0.6rem;">--------------------  !! volume on !!  --------------------</p>
+            <button class="no">No</button><br><br><br><br><br>
+        </div>
+    </div>
+
+    <!-- JAVA SCRIPT -->
+    <script src="open-vault.js"></script>
+</body>
+</html>

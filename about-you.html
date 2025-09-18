@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>You?</title>
+    <link rel="icon" href="shy-cat.jpg">
+    <style>
+        body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+        opacity: 0;
+        animation: fadeIn 4s ease forwards;
+        margin: 0;
+        }
+
+        @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+        }
+
+        a {
+        color: white;
+        text-decoration: none;
+        }
+
+        .clue {
+        font-size: 2rem;
+        color: black;
+        text-decoration: underline;
+        text-decoration-color: white;
+        }
+
+        .clue::selection {
+        background-color: yellow;
+        }
+
+        div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        }
+
+        h1 {
+        display: flex;
+        align-items: center;
+        gap: 15px; /* space between text/link and image */
+        flex-wrap: wrap; /* wrap if needed on small screens */
+        justify-content: center;
+        }
+        .hidden-text{
+        opacity: 0;
+        }
+        .btn {
+        border: none;
+        transition: font-size 1s ease;
+        cursor: pointer;
+        font-size: 1em;
+        display: inline-block;
+        }
+
+        .btn:hover {
+        font-size: 1.5em;
+        }
+
+        .image {
+        width: 100px;
+        height: 100px;
+        background-image: url('shy-cat.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        flex-shrink: 0; /* prevent shrinking */
+        }
+    </style>
+</head>
+<body>
+    <audio src="aa.mp3" autoplay></audio>
+    <div>
+        <h1>
+        I gues█ I've gr█wn a bit att█c█ed to
+        <a href="black-hole.html" class="btn">███</a>
+        <div class="image"><span class="hidden-text">25</span></div>
+        </h1>
+        <span class="clue">25</span>
+    </div>
+</body>
+</html>

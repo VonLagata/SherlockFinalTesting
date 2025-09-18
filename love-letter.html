@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>>.<</title>
+      <link rel="icon" href="letter-envelope-img.png">
+      <style>
+         body {
+            padding: 32px;
+            background: #b7b1f2;
+            text-align: center;
+            transition: background-color 1s ease;
+            opacity: 0;
+            background: #000; /* Start with black */
+            transition: opacity 2s ease, background 5s ease; /* Controls fade-in speed */
+         }
+        body.loaded {
+          opacity: 1;
+          background: #b7b1f2; /* Your final background color */
+        }
+
+         
+         .lyrics-area {
+            font-size: 1.8rem;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+            border: solid black 2px;
+            width: 60vw;
+            padding: 30px;
+         }
+
+         .word {
+            opacity: 0;
+            transition: opacity 300ms linear;
+            display: inline-block;
+            margin: 0 4px;
+            white-space: nowrap;
+         }
+
+         .word.visible { opacity: 1; }
+
+         .big-button {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.98);
+            width: 80vw;
+            max-width: 720px;
+            height: 60vh;
+            max-height: 600px;
+            border-radius: 12px;
+            border: 0;
+            background: #b7b1f2;
+            box-shadow: 0 12px 40px rgba(10, 10, 30, 0.2);
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1.2s ease-in-out, transform 300ms cubic-bezier(0.2, 0.9, 0.2, 1);
+            overflow: hidden;
+         }
+
+         .big-button.show {
+            border: solid white 2px;
+            width: 40vw;
+            background-color: #f8f8e1;
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+         }
+         a{
+          height: 60vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+         }
+         .big-button img {
+            max-width: 92%;
+            max-height: 92%;
+            display: block;
+            border-radius: 10px;
+            padding: 0;
+            opacity: 0;
+            transition: opacity 1s ease 0.25s;
+         }
+
+         .big-button.show img { opacity: 1; }
+
+         .big-button:hover { animation: shake 1.5s ease-in-out infinite; }
+
+         @keyframes shake {
+            0%,100% { transform: translate(-50%, -50%) translateX(0); }
+            25% { transform: translate(-50%, -50%) translateX(-5px); }
+            50% { transform: translate(-50%, -50%) translateX(5px); }
+            75% { transform: translate(-50%, -50%) translateX(-5px); }
+         }
+      </style>
+   </head>
+   <body>
+    <audio src="From The Start-Edited.mp3" autoplay hidden></audio>
+    <br>
+      <div class="lyrics-area" id="lyrics">
+         <span class="word" data-show="300" data-gap="100">Don't</span>
+         <span class="word" data-show="300" data-gap="120">you</span>
+         <span class="word" data-show="1300" data-gap="150">notice</span>
+         <span class="word" data-show="1100" data-gap="100">how</span>
+         <span class="word" data-show="300" data-gap="100">I</span>
+         <span class="word" data-show="400" data-gap="150">get</span>
+         <span class="word" data-show="600" data-gap="120">quiet</span>
+         <span class="word" data-show="300" data-gap="200">when</span>
+         <span class="word" data-show="300" data-gap="120">there's</span>
+         <span class="word" data-show="300" data-gap="100">no</span>
+         <span class="word" data-show="600" data-gap="120">one</span>
+         <span class="word" data-show="800" data-gap="100">else ~</span>
+         <span class="word" data-show="1100" data-gap="200">around?</span><br>
+         <span class="word" data-show="300" data-gap="0" style="color: rgb(239, 239, 0); font-weight: bold;">Me😵‍💫</span>
+         <span class="word" data-show="300" data-gap="0">and</span>
+         <span class="word" data-show="300" data-gap="100" style="color: rgb(255, 57, 57); font-weight: bold;">You🫵🏻</span><br>
+         <span class="word" data-show="300" data-gap="150">and</span>
+         <span class="word" data-show="700" data-gap="200">awkward</span>
+         <span class="word" data-show="600" data-gap="120">silence🤐</span>
+         <span class="word" data-show="500" data-gap="150">don't</span>
+         <span class="word" data-show="600" data-gap="100">you</span>
+         <span class="word" data-show="800" data-gap="200">dare ~</span>
+         <span class="word" data-show="200" data-gap="150">look</span>
+         <span class="word" data-show="300" data-gap="100">at</span>
+         <span class="word" data-show="300" data-gap="150">me</span>
+         <span class="word" data-show="400" data-gap="120">that</span>
+         <span class="word" data-show="1100" data-gap="120">way👀 ~</span>
+         <span class="word" data-show="300" data-gap="150">I</span>
+         <span class="word" data-show="300" data-gap="120">don't</span>
+         <span class="word" data-show="300" data-gap="200">need</span>
+         <span class="word" data-show="900" data-gap="100">reminders📝</span>
+         <span class="word" data-show="400" data-gap="150">of</span>
+         <span class="word" data-show="200" data-gap="120">how</span>
+         <span class="word" data-show="200" data-gap="150">you</span>
+         <span class="word" data-show="200" data-gap="200">don't</span>
+         <span class="word" data-show="200" data-gap="120">feel</span>
+         <span class="word" data-show="300" data-gap="120">the</span><br>
+         <span class="word" data-show="800" data-gap="150">same💔🥀</span><br>
+
+         <span class="word" data-show="300" data-gap="100">Oh ~</span>
+         <span class="word" data-show="300" data-gap="120">the</span>
+         <span class="word" data-show="1300" data-gap="150">burning🔥</span>
+         <span class="word" data-show="1100" data-gap="100">pain😔</span>
+         <span class="word" data-show="500" data-gap="100">listening</span>
+         <span class="word" data-show="300" data-gap="150">to</span>
+         <span class="word" data-show="300" data-gap="120">you</span>
+         <span class="word" data-show="300" data-gap="200">harp</span>
+         <span class="word" data-show="300" data-gap="120">on</span>
+         <span class="word" data-show="300" data-gap="100">'bout</span>
+         <span class="word" data-show="600" data-gap="120">some</span>
+         <span class="word" data-show="800" data-gap="100">new</span>
+         <span class="word" data-show="1100" data-gap="200">soulmate✨</span>
+         <span class="word" data-show="300" data-gap="0" style="color: rgb(188, 0, 31);">she's</span>
+         <span class="word" data-show="300" data-gap="0">so</span>
+         <span class="word" data-show="600" data-gap="100">perfect</span>
+         <span class="word" data-show="300" data-gap="150">Blah😒,</span>
+         <span class="word" data-show="300" data-gap="200">blah😒,</span>
+         <span class="word" data-show="300" data-gap="120">blah😒</span>
+         <span class="word" data-show="500" data-gap="150">oh ~</span>
+         <span class="word" data-show="600" data-gap="100">how</span>
+         <span class="word" data-show="500" data-gap="200">I</span>
+         <span class="word" data-show="400" data-gap="150">wish</span>
+         <span class="word" data-show="300" data-gap="100">you'll</span>
+         <span class="word" data-show="300" data-gap="150">wake</span>
+         <span class="word" data-show="400" data-gap="120">up</span>
+         <span class="word" data-show="600" data-gap="120">one</span>
+         <span class="word" data-show="1000" data-gap="150">day🌞</span>
+         <span class="word" data-show="300" data-gap="120">run🏃🏻‍♂️</span>
+         <span class="word" data-show="300" data-gap="200">to</span>
+         <span class="word" data-show="300" data-gap="100">me,</span>
+         <span class="word" data-show="700" data-gap="150">confess</span>
+         <span class="word" data-show="300" data-gap="120">your</span>
+         <span class="word" data-show="300" data-gap="150">love❤️‍🔥</span>
+         <span class="word" data-show="200" data-gap="200">at</span>
+         <span class="word" data-show="200" data-gap="120">least</span>
+         <span class="word" data-show="200" data-gap="120">just</span>
+         <span class="word" data-show="200" data-gap="150">let</span>
+         <span class="word" data-show="200" data-gap="120">me</span><br>
+         <span class="word" data-show="800" data-gap="150">say-</span>
+      </div>
+
+      <button id="endBtn" class="big-button" aria-label="Finish">
+        <a href="index.html">
+            <img src="letter-envelope-img.png" alt="envelope" />
+        </a>
+      </button>
+
+
+      <script>
+        window.addEventListener("load", () => {
+          document.body.classList.add("loaded"); // Trigger fade-in when page loads
+        });
+
+         function playTimedWords(list, options = {}) {
+            const cfg = Object.assign(
+               {
+                  defaultShow: 700,
+                  defaultFade: 300,
+                  gap: 80,
+                  startDelay: 0,
+                  onComplete: null,
+               },
+               options
+            );
+
+            list.forEach(span => {
+               span.style.transition = `opacity ${cfg.defaultFade}ms linear`;
+            });
+
+            let t = cfg.startDelay;
+            list.forEach(span => {
+               const showTime = parseInt(span.dataset.show) || cfg.defaultShow;
+               const gapTime = parseInt(span.dataset.gap) || cfg.gap;
+
+               setTimeout(() => span.classList.add("visible"), t);
+               const fadeOutStart = t + showTime;
+               setTimeout(() => span.classList.remove("visible"), fadeOutStart);
+               t = fadeOutStart + gapTime;
+            });
+
+            const totalDelay = list.length ? t : 0;
+            setTimeout(() => { if (typeof cfg.onComplete === "function") cfg.onComplete(); }, totalDelay + 10);
+         }
+
+         const words = Array.from(document.querySelectorAll(".word"));
+         const endBtn = document.getElementById("endBtn");
+
+         window.addEventListener("load", () => {
+            playTimedWords(words, {
+               defaultShow: 700,
+               defaultFade: 300,
+               gap: 80,
+               startDelay: 9000,
+               onComplete: () => {
+                  endBtn.classList.add("show");
+                  document.body.style.backgroundColor = "#FFC1DA";
+               },
+            });
+
+            const img = endBtn.querySelector("img");
+            img.addEventListener("error", () => {
+               endBtn.style.background = "#ffffff";
+               endBtn.textContent = "Open";
+            });
+         });
+
+         endBtn.addEventListener("click", () => {
+            endBtn.classList.remove("show");
+         });
+      </script>
+   </body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get the Output</title>
+    <link rel="stylesheet" href="array-design.css">
+    <link rel="icon" href="java-eclipse-icon.jpg">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const p = document.getElementById('change');
+            const originalText = p.textContent;
+            document.addEventListener('selectionchange', () => {
+                const selection = window.getSelection();
+                if (selection.rangeCount > 0) {
+                    const range = selection.getRangeAt(0);
+                    if (p.contains(range.commonAncestorContainer)) {
+                        p.textContent = "Trace the output of the code";
+                    } else {
+                        p.textContent = originalText;
+                    }
+                } else {
+                    p.textContent = originalText;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <audio src="scream.mp3" autoplay></audio>
+    <!-- HEADER -->
+    <header>
+        <p>
+            <span>File</span>
+            <span>Edit</span>
+            <span>Source</span>
+            <span>Refractor</span>
+            <span>Navigate</span>
+            <span>Search</span>
+            <span>Project</span>
+            <span>Run</span>
+            <span>Window</span>
+            <span>Help</span>
+            <span class="back"><a href="index.html">< Go Back</a></span>
+        </p>
+        <!-- BELOW HEADER -->
+        <div class="below-header">
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </header>
+    <!-- MAIN -->
+    <main>
+        <div class="left-up" style="grid-area: left-up;">
+            <div class="item">
+                <div class="folder-icon"></div><p>——.——————.——</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>—.—————.————</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>———.———————.</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>————.————.——</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>—.————.—————</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>——.——————.——</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>—.—————.————</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>———.———————.</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>—.—————.————</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>———.———————.</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>—.—————.————</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>———.———————.</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>—.—————.————</p>
+            </div>
+            <div class="item">
+                <div class="folder-icon"></div><p>———.———————.</p>
+            </div>
+        </div>
+        <div class="left-down" style="grid-area: left-down;">
+            <p  style="color: #C8322E;">Exeption in thread "main" <span style="color: #248BD2; text-decoration: underline;">java.lang.ArrayIndexOutOfBoundsException</span>: 4 <br>at
+crux19aug.Crux19Aug2018.src.assignments<br>.ArrayIndexOutOfBound(<span style="color: #248BD2; text-decoration: underline;">ArrayIndexOutOfBoundException<br>.java:13</span>)</p>
+        </div>
+        <div class="mid" style="grid-area: mid;">
+            <p>
+                package <span style="color: #FEB346;">main;</span><br><br>
+                public class <span style="color: #2AA099;">Main</span><span style="color: #FEB346;">{</span><br>
+                <span style="margin-left: 20px;">public static void <span style="color: #FEB346;">main<span style="color: #C8322E;">(</span><span style="color: #2AA099;">String</span>[] args<span style="color: #C8322E;">){</span></span></span><br><br>
+                <span style="margin-left: 40px;">int <span style="color: #FEB346;">[] array =  <span style="color: #C8322E;">{</span>5, 9, 20, 11, 8, 21 <span style="color: #C8322E;">}</span>;</span></span><br><br>
+                <span class="clue1" style="margin-left: 60px;"><span style="color: #7F8F85;">System<span style="color: #FEB346;">.<span style="color: white;">out</span>.</span>print</span><span style="color: #C8322E;">(<span style="color: #2AA099;">array[1]</span>)</span>;</span><br>
+                <span class="clue2" style="margin-left: 60px;"><span style="color: #7F8F85;">System<span style="color: #FEB346;">.<span style="color: white;">out</span>.</span>print</span><span style="color: #C8322E;">(<span style="color: #2AA099;">array[5]</span>)</span>;</span><br><br>
+                <span style="color: #C8322E;">
+                <span style="margin-left: 20px;">}</span><br> }
+                </span>
+            </p>
+        </div>
+        <div class="below" style="grid-area: below;">
+            <p class="change" id="change">
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span> 
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span> 
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+                <span>highlight</span>
+            </p>
+        </div>
+        <div class="right" style = "grid-area: right;"></div>
+    </main>
+</body>
+</html>

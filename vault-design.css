@@ -1,0 +1,310 @@
+* {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #362222;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0%;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.clue-2 {
+    color: #362222;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.clue-2::selection{
+    background-color: green;
+}
+
+/* MAIN ----------------------------------------------- */
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .container {
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75%;
+    width: 70%;
+    background-color: #423F3E;
+    padding: 3%;
+}
+
+/* FORM ------------------------------------------------ */
+.container .input-box{
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 100%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: solid 1px white;
+}
+
+.input-box form{
+    font-size: 1.5rem;
+    width: 80%;
+    text-align: center;
+    color: white;
+    margin-top: 10%;
+}
+
+.input-box label,input {
+    margin: 10px;
+    height: 5vh;
+    width: 70%;
+    border-radius: 5px;
+    margin-bottom: 7vh;
+    padding: 10px;
+}
+
+.input-box button{
+    background-color: #362222;
+    width: 150px;
+    height: 50px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.5s ease-in-out;
+}
+
+.input-box button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 100px #362222;
+}
+
+.input-box button > a {
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+/* IMAGE ---------------------------------------------- */
+.container .img-btn{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-btn button{
+    height: 90%;
+    background-color: transparent;
+    border: none;
+}
+
+.img-btn a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-btn img{
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 60% {
+        transform: translateX(-5px);
+    }
+    40%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.img-btn img:hover {
+    animation: shake 1s ease-in-out infinite;
+    transform: scale(1.1);
+}
+
+/* FOOTER ----------------------------------------------- */
+footer {
+    margin-top: 100vh;
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
+footer div {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+footer button {
+    background-color: transparent;
+    border: none;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1.3s ease-in-out, filter 2s;
+}
+footer button:hover{
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 100px gold);
+}
+footer a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer button img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    transition: box-shadow 0.5s;
+}
+/* MODAL ---------------------------------------------- */
+.modal {
+    background-color: rgb(100, 100, 3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none; /* prevent interaction when hidden */
+
+    transition: opacity 0.3s ease-in-out, z-index 0.3s ease-in-out;
+}
+.modal.open {
+    opacity: 1;
+    z-index: 1000; /* bring modal on top */
+    pointer-events: auto; /* allow interaction */
+}
+.modal-close{
+    border-radius: 5px;
+    border: none;
+    height: 5vh;
+    width: 5vw;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+.modal-close:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 100px white;
+}
+
+/* OPEN VAULT */
+.open-vault {
+background-color: rgba(0, 0, 0, 0.7); /* semi-transparent black */
+position: fixed;
+top: 0; 
+left: 0; 
+right: 0; 
+bottom: 0;
+
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+
+opacity: 0;
+z-index: -1;
+pointer-events: none;
+
+transition: opacity 0.3s ease-in-out;
+}
+
+/* Show modal */
+.open-vault.open {
+opacity: 1;
+z-index: 9999;
+pointer-events: auto;
+}
+
+/* Modal inner content */
+.openVault-inner {
+background-color: #423F3E;
+padding: 30px 40px;
+border-radius: 15px;
+max-width: 500px;
+width: 90%;
+box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+color: white;
+}
+/* Ensure the inner modal is the relative container for the moving button */
+.openVault-inner {
+position: relative;
+overflow: hidden; /* prevents the button from visually escaping */
+}
+/* Smooth show/hide of overlay */
+.open-vault {
+background-color: rgba(0,0,0,0.7);
+position: fixed;
+top: 0; left: 0; right: 0; bottom: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+
+opacity: 0;
+z-index: -1;
+pointer-events: none;
+transition: opacity 0.25s ease;
+}
+.open-vault.open {
+opacity: 1;
+z-index: 9999;
+pointer-events: auto;
+}
+.yes, .no{
+    border: none;
+    border-radius: 5px;
+    height: 5vh;
+    width: 5vw;
+    background-color: pink;
+}

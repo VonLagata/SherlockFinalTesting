@@ -202,7 +202,7 @@ footer button img {
 }
 /* MODAL ---------------------------------------------- */
 .modal {
-    background-color: rgb(100, 100, 3);
+    background-color: black;
     position: fixed;
     top: 0;
     left: 0;
@@ -307,4 +307,5 @@ pointer-events: auto;
     height: 5vh;
     width: 5vw;
     background-color: pink;
+
 }
